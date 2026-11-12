@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carlo Reyes | Computer Engineering Portfolio</title>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --surface: #161b22;
+      --border: #30363d;
+      --text: #e6edf3;
+      --muted: #8b949e;
+      --accent: #58a6ff;
+      --accent-hover: #79c0ff;
+      --tag-bg: #1f2937;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: var(--accent-hover);
+      text-decoration: underline;
+    }
+
+    /* Navigation */
+    header {
+      border-bottom: 1px solid var(--border);
+      background: rgba(13, 17, 23, 0.9);
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(8px);
+      z-index: 100;
+    }
+
+    .nav-container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--text);
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    nav a {
+      margin-left: 1.5rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    nav a:hover {
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    /* Main Container */
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+    }
+
+    section {
+      margin-bottom: 4.5rem;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 2rem 0 1rem;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      font-size: 0.85rem;
+      color: var(--accent);
+      background: rgba(88, 166, 255, 0.1);
+      border: 1px solid rgba(88, 166, 255, 0.3);
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      margin-bottom: 1rem;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      color: var(--muted);
+      max-width: 650px;
+      font-size: 1.1rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.6rem 1.2rem;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      transition: 0.2s ease;
+    }
+
+    .btn:hover {
+      border-color: var(--accent);
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #0d1117;
+      border-color: var(--accent);
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-hover);
+      color: #0d1117;
+    }
+
+    /* Projects Grid */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+
+    .card-details {
+      font-size: 0.88rem;
+      color: var(--text);
+      background: var(--bg);
+      padding: 0.75rem;
+      border-radius: 6px;
+      border-left: 3px solid var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .tag {
+      font-size: 0.78rem;
+      background: var(--tag-bg);
+      color: var(--accent);
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      border: 1px solid var(--border);
+    }
+
+    .card-links {
+      display: flex;
+      gap: 1rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    /* Skills Grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .skill-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.25rem;
+    }
+
+    .skill-box h3 {
+      font-size: 1rem;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+
+    .skill-box ul {
+      list-style: none;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .skill-box li {
+      margin-bottom: 0.35rem;
+    }
+
+    /* About & Education */
+    .about-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.5rem;
+    }
+
+    .about-box p {
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .edu-item {
+      border-top: 1px solid var(--border);
+      padding-top: 1rem;
+      margin-top: 1rem;
+    }
+
+    .edu-item strong {
+      display: block;
+      font-size: 1.05rem;
+    }
+
+    .edu-item span {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      text-align: center;
+      padding: 2rem 1.5rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      nav {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="logo">Carlo<span>.dev</span></a>
+      <nav>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-badge">BS Computer Engineering Graduate • STI College</div>
+      <h1>Hi, I'm Carlo Reyes.</h1>
+      <p>
+        I design and build embedded hardware-software systems, IoT automation pipelines, and edge-AI applications. Focused on bridging physical sensors and microcontrollers with reliable cloud and mobile software.
+      </p>
+      <div class="btn-group">
+        <a href="#projects" class="btn btn-primary">View Projects</a>
+        <a href="https://github.com/JRDCruz" target="_blank" class="btn">GitHub</a>
+        <a href="https://linkedin.com/in/JRDCruz" target="_blank" class="btn">LinkedIn</a>
+        <a href="mailto:carlo.reyes@example.com" class="btn">Email Me</a>
+      </div>
+    </section>
+
+    <!-- Featured Projects -->
+    <section id="projects">
+      <h2>Featured Engineering Projects</h2>
+      <div class="projects-grid">
+
+        <!-- Project 1: Capstone / Thesis -->
+        <article class="card">
+          <div>
+            <h3>IoT Drainage, Flood & Pavement Monitoring System</h3>
+            <p>
+              Automated edge-monitoring system combining environmental sensors, machine learning prediction, computer vision anomaly detection, and remote actuator control.
+            </p>
+            <div class="card-details">
+              <strong>Key Engineering:</strong> Integrated Raspberry Pi 3B+ with ultrasonic, flow, soil moisture, and DHT22 sensors, TensorFlow Lite forecasting, OpenCV surface detection, Firebase Realtime DB, and a native Android app.
+            </div>
+            <div class="tags">
+              <span class="tag">Raspberry Pi</span>
+              <span class="tag">Python</span>
+              <span class="tag">OpenCV</span>
+              <span class="tag">TFLite</span>
+              <span class="tag">Firebase</span>
+              <span class="tag">Android</span>
+            </div>
+          </div>
+          <div class="card-links">
+            <a href="https://github.com/JRDCruz/project-repo" target="_blank">GitHub Repo →</a>
+            <a href="#demo-video">Demo / Docs →</a>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="card">
+          <div>
+            <h3>Automated Relay & Solenoid Flow Controller</h3>
+            <p>
+              Hardware control subsystem engineered to manage 12V DC solenoid valves using optical isolation, voltage dividers, and real-time flow-rate feedback.
+            </p>
+            <div class="card-details">
+              <strong>Key Engineering:</strong> Solved GPIO bus contention and under-voltage stability issues using dedicated power regulation, systemd background daemons, and OLED status telemetry.
+            </div>
+            <div class="tags">
+              <span class="tag">Embedded Linux</span>
+              <span class="tag">GPIO</span>
+              <span class="tag">Electronics</span>
+              <span class="tag">OLED / I2C</span>
+            </div>
+          </div>
+          <div class="card-links">
+            <a href="https://github.com/JRDCruz/controller-repo" target="_blank">GitHub Repo →</a>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="card">
+          <div>
+            <h3>[Project 3 Title — e.g., Arduino / Web / Software Build]</h3>
+            <p>
+              Brief 2-sentence description of another lab build, internship task, or personal software/hardware project you completed.
+            </p>
+            <div class="card-details">
+              <strong>Key Engineering:</strong> Highlight the core architecture, protocol (UART, SPI, REST API), or bug you solved.
+            </div>
+            <div class="tags">
+              <span class="tag">C++</span>
+              <span class="tag">Arduino</span>
+              <span class="tag">Git</span>
+            </div>
+          </div>
+          <div class="card-links">
+            <a href="https://github.com/JRDCruz/third-repo" target="_blank">GitHub Repo →</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Technical Skills -->
+    <section id="skills">
+      <h2>Technical Stack</h2>
+      <div class="skills-grid">
+        <div class="skill-box">
+          <h3>Programming Languages</h3>
+          <ul>
+            <li>Python</li>
+            <li>C / C++</li>
+            <li>Java / Kotlin</li>
+            <li>HTML / CSS / JavaScript</li>
+            <li>Bash / Shell Scripting</li>
+          </ul>
+        </div>
+        <div class="skill-box">
+          <h3>Hardware & Embedded</h3>
+          <ul>
+            <li>Raspberry Pi & Arduino</li>
+            <li>GPIO, I2C, UART, SPI</li>
+            <li>Relays, Solenoids & Sensors</li>
+            <li>Circuit Soldering & Diagnostics</li>
+          </ul>
+        </div>
+        <div class="skill-box">
+          <h3>Frameworks & Tools</h3>
+          <ul>
+            <li>Linux (Debian / Raspberry Pi OS)</li>
+            <li>OpenCV & TensorFlow Lite</li>
+            <li>Firebase Realtime Database</li>
+            <li>Android Studio & Git / GitHub</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- About & Education -->
+    <section id="about">
+      <h2>About & Education</h2>
+      <div class="about-box">
+        <p>
+          I am a Computer Engineering graduate with a hands-on approach to prototyping, low-level system troubleshooting, and full-stack hardware-software integration. Whether configuring Linux daemons on single-board computers or wiring sensor arrays, I enjoy turning complex engineering requirements into working prototypes.
+        </p>
+        <div class="edu-item">
+          <strong>Bachelor of Science in Computer Engineering</strong>
+          <span>STI College • Graduated 2026</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <h2>Get In Touch</h2>
+      <p style="color: var(--muted); margin-bottom: 1.25rem;">
+        Currently open to entry-level roles in Embedded Systems, IoT Engineering, Software Development, and IT Infrastructure.
+      </p>
+      <div class="btn-group">
+        <a href="mailto:carlo.reyes@example.com" class="btn btn-primary">carlo.reyes@example.com</a>
+        <a href="https://github.com/JRDCruz" target="_blank" class="btn">github.com/JRDCruz</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Carlo Reyes • Built & Hosted on GitHub Pages</p>
+  </footer>
+
+</body>
+</html>
