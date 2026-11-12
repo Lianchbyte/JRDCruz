@@ -251,6 +251,40 @@
       margin-bottom: 0.35rem;
     }
 
+    /* Certifications List */
+    .cert-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .cert-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .cert-item h3 {
+      font-size: 1.05rem;
+      margin-bottom: 0.35rem;
+      color: var(--text);
+    }
+
+    .cert-meta {
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+    }
+
+    .cert-link {
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
     /* About & Education */
     .about-box {
       background: var(--surface);
@@ -304,10 +338,11 @@
   <!-- Navigation -->
   <header>
     <div class="nav-container">
-      <a href="#" class="logo">Jan Robbie<span>.dev</span></a>
+      <a href="#" class="logo">Robbie<span>.dev</span></a>
       <nav>
         <a href="#projects">Projects</a>
         <a href="#skills">Skills</a>
+        <a href="#certifications">Certifications</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -317,16 +352,16 @@
   <main>
     <!-- Hero Section -->
     <section class="hero">
-      <div class="hero-badge">BS Computer Engineering Graduate • STI College</div>
+      <div class="hero-badge">BS Computer Engineering Student • STI College</div>
       <h1>Hi, I'm Robbie.</h1>
       <p>
-        I design and build embedded systems, IoT infrastructure, and intelligent hardware solutions. Passionate about bridging physical sensors, microcontrollers, and artificial intelligence into reliable engineering prototypes.
+        I design and build embedded systems, IoT infrastructure, and intelligent hardware solutions. Passionate about bridging physical sensors, microcontrollers, and automation into reliable engineering prototypes.
       </p>
       <div class="btn-group">
         <a href="#projects" class="btn btn-primary">View Projects</a>
-        <a href="https://github.com/JRDCruz" target="_blank" class="btn">GitHub</a>
-        <a href="https://linkedin.com/in/JRDCruz" target="_blank" class="btn">LinkedIn</a>
-        <a href="mailto:robbie04delacruz@gmail.com" class="btn">Email Me</a>
+        <a href="https://github.com/yourusername" target="_blank" class="btn">GitHub</a>
+        <a href="https://linkedin.com/in/yourusername" target="_blank" class="btn">LinkedIn</a>
+        <a href="mailto:janrobbie.delacruz@example.com" class="btn">Email Me</a>
       </div>
     </section>
 
@@ -340,21 +375,20 @@
           <div>
             <h3>Surface Runoff Reduction Through Permeable Pavement with Artificial Neural Network and IoT System</h3>
             <p>
-              An intelligent stormwater management and infrastructure monitoring system utilizing environmental sensors coupled with predictive ANN modeling.
+              An intelligent stormwater management and infrastructure monitoring system utilizing environmental sensors coupled with predictive modeling.
             </p>
             <div class="card-details">
-              <strong>Key Engineering:</strong> Integrated hardware sensor arrays with microcontroller logic and neural network forecasting to analyze and optimize surface runoff reduction dynamically.
+              <strong>Key Engineering:</strong> Integrated hardware sensor arrays with microcontroller logic and forecasting models to analyze and optimize surface runoff reduction dynamically.
             </div>
             <div class="tags">
               <span class="tag">IoT Systems</span>
-              <span class="tag">Artificial Neural Networks</span>
               <span class="tag">Embedded Systems</span>
               <span class="tag">Python</span>
               <span class="tag">Sensors</span>
             </div>
           </div>
           <div class="card-links">
-            <a href="https://github.com/JRDCruz/runoff-reduction-iot" target="_blank">GitHub Repo →</a>
+            <a href="https://github.com/yourusername/runoff-reduction-iot" target="_blank">GitHub Repo →</a>
           </div>
         </article>
 
@@ -377,7 +411,7 @@
             </div>
           </div>
           <div class="card-links">
-            <a href="https://github.com/JRDCruz/mapping-robot" target="_blank">GitHub Repo →</a>
+            <a href="https://github.com/yourusername/mapping-robot" target="_blank">GitHub Repo →</a>
           </div>
         </article>
 
@@ -407,27 +441,68 @@
           </ul>
         </div>
         <div class="skill-box">
-          <h3>Frameworks & Tools</h3>
+          <h3>Tools & Frameworks</h3>
           <ul>
-            <li>Linux / Embedded OS</li>
-            <li>Artificial Neural Networks (ANN)</li>
             <li>Git & GitHub Version Control</li>
-            <li>Android Studio & Firebase</li>
+            <li>Android Studio</li>
+            <li>Firebase Realtime Database</li>
+            <li>VS Code & IDEs</li>
           </ul>
         </div>
       </div>
     </section>
 
+    <!-- Certifications -->
+    <section id="certifications">
+      <h2>Certifications & Training</h2>
+      <div class="cert-list">
+
+        <!-- Certification 1 -->
+        <div class="cert-item">
+          <div>
+            <h3>[Introduction to Cybersecurity]</h3>
+            <div class="cert-meta">[Cisco Networking Academy] • [2026]</div>
+          </div>
+          <a href="certs/Introduction to Cybersecurity.pdf" target="_blank" class="cert-link">View Credential →</a>
+        </div>
+
+        <!-- Certification 2 -->
+        <div class="cert-item">
+          <div>
+            <h3>[Solid Edge Associate Level]</h3>
+            <div class="cert-meta">[Siemens] • [2025]</div>
+          </div>
+          <a href="certs/Siemens Solid Edge Certification.pdf" target="_blank" class="cert-link">View Credential →</a>
+        </div>
+
+        <!-- Certification 3 -->
+        <div class="cert-item">
+          <div>
+            <h3>[Certificate of Completion - Cybersecurity]</h3>
+            <div class="cert-meta">[ADBInstitute E-Learning] • [2026]</div>
+          </div>
+          <a href="certs/Cybersecurity–ADBI-E-Learning.pdf" target="_blank" class="cert-link">View Credential →</a>
+        </div>
+
+        <!-- Certification 4 -->
+        <div class="cert-item">
+          <div>
+            <h3>[Java Fundamentals]</h3>
+            <div class="cert-meta">[Oracle Academy] • [2024]</div>
+          </div>
+          <a href="certs/java certification.pdf" target="_blank" class="cert-link">View Credential →</a>
+        </div>
+        
     <!-- About & Education -->
     <section id="about">
       <h2>About & Education</h2>
       <div class="about-box">
         <p>
-          I am a Computer Engineering graduate with a hands-on approach to hardware-software integration, embedded prototyping, and intelligent system design. From developing IoT stormwater management solutions to building mapping robots, I enjoy solving difficult technical challenges from the circuit level up.
+          I am a Computer Engineering undergraduate with a hands-on approach to hardware-software integration, embedded prototyping, and intelligent system design. From developing IoT stormwater management solutions to building mapping robots, I enjoy solving difficult technical challenges from the circuit level up.
         </p>
         <div class="edu-item">
           <strong>Bachelor of Science in Computer Engineering</strong>
-          <span>STI College • Graduated 2026</span>
+          <span>STI College • Expected to Graduate in 2027</span>
         </div>
       </div>
     </section>
@@ -436,11 +511,11 @@
     <section id="contact">
       <h2>Get In Touch</h2>
       <p style="color: var(--muted); margin-bottom: 1.25rem;">
-        Currently open to entry-level roles in Embedded Systems, IoT Engineering, Robotics, and Software Development.
+        Currently open to internships, OJT opportunities, and collaborative projects in Embedded Systems, IoT Engineering, Robotics, and Software Development.
       </p>
       <div class="btn-group">
-        <a href="mailto:robbie04delacruz@gmail.com " class="btn btn-primary">robbie04delacruz@gmail.com </a>
-        <a href="https://github.com/JRDCruz" target="_blank" class="btn">github.com/JRDCruz</a>
+        <a href="mailto:janrobbie.delacruz@example.com" class="btn btn-primary">janrobbie.delacruz@example.com</a>
+        <a href="https://github.com/yourusername" target="_blank" class="btn">github.com/yourusername</a>
       </div>
     </section>
   </main>
